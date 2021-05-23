@@ -1,0 +1,200 @@
+﻿@model ExaminationSystem.ViewModelStudent.CreateStudentViewModel
+@{ ViewData["Title"] = "NewStudent";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<style>
+    body {
+        color: #fff;
+        background: #20334f;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .form-control {
+        height: 40px;
+        box-shadow: none;
+        color: #969fa4;
+    }
+
+        .form-control:focus {
+            border-color: #5cb85c;
+        }
+
+    .form-control, .btn {
+        border-radius: 20px;
+    }
+
+    .signup-form {
+        width: 450px;
+        margin: 0 auto;
+        padding: 30px 0;
+        font-size: 15px;
+    }
+
+        .signup-form h2 {
+            color: #636363;
+            margin: 0 0 15px;
+            position: relative;
+            text-align: center;
+        }
+
+            .signup-form h2:before, .signup-form h2:after {
+                content: "";
+                height: 2px;
+                width: 30%;
+                background: #d4d4d4;
+                position: absolute;
+                top: 50%;
+                z-index: 2;
+            }
+
+            .signup-form h2:before {
+                left: 0;
+            }
+
+            .signup-form h2:after {
+                right: 0;
+            }
+
+        .signup-form .hint-text {
+            color: #999;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .signup-form form {
+            color: #999;
+            border-radius: 131px 0px;
+            margin-bottom: 15px;
+            background: #f2f3f7;
+            box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+            padding: 45px;
+        }
+
+        .signup-form .form-group {
+            margin-bottom: 20px;
+        }
+
+        .signup-form input[type="checkbox"] {
+            margin-top: 3px;
+        }
+
+        .signup-form .btn {
+            font-size: 16px;
+            font-weight: bold;
+            min-width: 140px;
+            outline: none !important;
+        }
+
+        .signup-form .row div:first-child {
+            padding-right: 10px;
+        }
+
+        .signup-form .row div:last-child {
+            padding-left: 10px;
+        }
+
+        .signup-form a {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+            .signup-form a:hover {
+                text-decoration: none;
+            }
+
+        .signup-form form a {
+            color: #5cb85c;
+            text-decoration: none;
+        }
+
+            .signup-form form a:hover {
+                text-decoration: underline;
+            }
+
+    a {
+        color: white;
+    }
+</style>
+<body>
+    <center>
+
+        <h1>Add Student</h1>
+        <button type="button" class="btn btn-info">
+            <a asp-area="" asp-controller="Student" asp-action="AllDetails">Back to Student Details</a>
+        </button>
+        <button type="button" class="btn btn-info">
+            <a asp-area="" asp-controller="Home" asp-action="index">Back to Home</a>
+        </button>
+    </center>
+    <div class="signup-form">
+        <form enctype="multipart/form-data" asp-controller="Student" asp-action="Create"
+              method="post">
+            <h2>Upload</h2>
+            <
+            <div class="form-group">
+                <div class="row">
+                    <div class="col">
+                        <input asp-for="sId" class="form-control" placeholder="Id">
+                        <span asp-validation-for="sId" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <input asp-for="sName" class="form-control" placeholder="Student Name">
+                <span asp-validation-for="sName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input asp-for="sEmailId" class="form-control" placeholder="Email Id">
+                <span asp-validation-for="sEmailId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input asp-for="sDOB" class="form-control" placeholder="DOB">
+                <span asp-validation-for="sDOB" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input asp-for="sFatherName" class="form-control" placeholder="Father Name">
+                <span asp-validation-for="sFatherName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input asp-for="sMotherName" class="form-control" placeholder="Mother Name">
+                <span asp-validation-for="sMotherName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <select asp-for="sBloodGroup" class="custom-select mr-sm-2 form-control"
+                        asp-items="Html.GetEnumSelectList<bGroup>()">
+                    <option value="">Please Select</option>
+                    <span asp-validation-for="sBloodGroup" class="text-danger"></span>
+                </select>
+            </div>
+            <div class="form-group">
+                <select asp-for="sGender" class="custom-select mr-sm-2 form-control"
+                        asp-items="Html.GetEnumSelectList<gen>()">
+                    <option value="">Please Select</option>
+                    <span asp-validation-for="sGender" class="text-danger"></span>
+                </select>
+            </div>
+            <div class="form-group">
+                <input asp-for="sMobileNumber" class="form-control" placeholder="Mobile Number">
+                <span asp-validation-for="sMobileNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input asp-for="sAddress" class="form-control" placeholder="Address">
+                <span asp-validation-for="sAddress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input asp-for="sRollNumber" class="form-control" placeholder="Roll Number">
+                <span asp-validation-for="sRollNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="form-check-label"><input type="checkbox" required="required"> I accept the <a href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a></label>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-success btn-lg btn-block">Add Course</button>
+            </div>
+
+        </form>
+    </div>
+</body>

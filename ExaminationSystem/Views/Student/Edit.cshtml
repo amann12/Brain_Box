@@ -1,0 +1,110 @@
+﻿@model ExaminationSystem.ViewModelStudent.EditStudentViewModel
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<form asp-controller="Student" asp-action="Edit" enctype="multipart/form-data" method="post" class="mt-3">
+    <div asp-validation-summary="All" class="text-danger">
+    </div>
+
+    @*Bind to the properties of the EmployeeEditViewModel. The asp-for tag helper
+        takes care of displaying the existing data in the respective input elements*@
+    <div class="form-group row">
+        <label asp-for="sName" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-10">
+            <input asp-for="sName" class="form-control" placeholder="Name">
+            <span asp-validation-for="sName" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label asp-for="sEmailId" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-10">
+            <input asp-for="sEmailId" class="form-control" placeholder="Email_ID">
+            <span asp-validation-for="sEmailId" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label asp-for="sDOB" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-10">
+            <input asp-for="sDOB" class="form-control" placeholder="DOB">
+            <span asp-validation-for="sDOB" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label asp-for="sFatherName" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-10">
+            <input asp-for="sFatherName" class="form-control" placeholder="Father_Name">
+            <span asp-validation-for="sFatherName" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label asp-for="sMotherName" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-10">
+            <input asp-for="sMotherName" class="form-control" placeholder="Mother_Name">
+            <span asp-validation-for="sMotherName" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label asp-for="sBloodGroup" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-10">
+            <select asp-for="sBloodGroup" class="custom-select mr-sm-2"
+                    asp-items="Html.GetEnumSelectList<bGroup>()">
+                <option value="">Please Select</option>
+            </select>
+            <span asp-validation-for="sBloodGroup" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label asp-for="sGender" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-10">
+            <select asp-for="sGender" class="custom-select mr-sm-2"
+                    asp-items="Html.GetEnumSelectList<gen>()">
+                <option value="">Please Select</option>
+            </select>
+            <span asp-validation-for="sGender" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label asp-for="sMobileNumber" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-10">
+            <input asp-for="sMobileNumber" class="form-control" placeholder="Mobile_Number">
+            <span asp-validation-for="sMobileNumber" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label asp-for="sAddress" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-10">
+            <input asp-for="sAddress" class="form-control" placeholder="Address">
+            <span asp-validation-for="sAddress" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label asp-for="sRollNumber" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-10">
+            <input asp-for="sRollNumber" class="form-control" placeholder="Roll_Number">
+            <span asp-validation-for="sRollNumber" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <div class="col-sm-10">
+            <button type="submit" class="btn btn-primary">Update</button>
+            <a asp-action="index" asp-controller="home" class="btn btn-primary">Cancel</a>
+        </div>
+    </div>
+
+
+
+
+</form>

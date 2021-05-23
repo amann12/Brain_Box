@@ -1,0 +1,87 @@
+﻿@model ExaminationSystem.ViewModelTeacher.EditTeacherViewModel
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<form asp-controller="Teacher" asp-action="Edit" enctype="multipart/form-data" method="post" class="mt-3">
+    <div asp-validation-summary="All" class="text-danger">
+    </div>
+
+    @*Bind to the properties of the EmployeeEditViewModel. The asp-for tag helper
+        takes care of displaying the existing data in the respective input elements*@
+    <div class="form-group row">
+        <label asp-for="tName" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-10">
+            <input asp-for="tName" class="form-control" placeholder="Name">
+            <span asp-validation-for="tName" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label asp-for="tGender" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-10">
+            <select asp-for="tGender" class="custom-select mr-sm-2"
+                    asp-items="Html.GetEnumSelectList<gen>()">
+                <option value="">Please Select</option>
+            </select>
+            <span asp-validation-for="tGender" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label asp-for="tBloodGroup" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-10">
+            <select asp-for="tBloodGroup" class="custom-select mr-sm-2"
+                    asp-items="Html.GetEnumSelectList<bGroup>()">
+                <option value="">Please Select</option>
+            </select>
+            <span asp-validation-for="tBloodGroup" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label asp-for="tEmailId" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-10">
+            <input asp-for="tEmailId" class="form-control" placeholder="Email_ID">
+            <span asp-validation-for="tEmailId" class="text-danger"></span>
+        </div>
+    </div>
+
+
+
+
+    <div class="form-group row">
+        <label asp-for="tMobileNumber" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-10">
+            <input asp-for="tMobileNumber" class="form-control" placeholder="Mobile_Number">
+            <span asp-validation-for="tMobileNumber" class="text-danger"></span>
+        </div>
+    </div>
+
+
+    <div class="form-group row">
+        <label asp-for="tQualification" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-10">
+            <input asp-for="tQualification" class="form-control" placeholder="Qualification">
+            <span asp-validation-for="tQualification" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label asp-for="tAddress" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-10">
+            <input asp-for="tAddress" class="form-control" placeholder="Address">
+            <span asp-validation-for="tAddress" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <div class="col-sm-10">
+            <button type="submit" class="btn btn-primary">Update</button>
+            <a asp-action="index" asp-controller="home" class="btn btn-primary">Cancel</a>
+        </div>
+    </div>
+
+
+
+
+</form>
