@@ -1,7 +1,10 @@
-﻿@model ExaminationSystem.ViewModelStudent.CreateStudentViewModel
-@{ ViewData["Title"] = "NewStudent";
+﻿@model ExaminationSystem.ViewModel.StudentRegisterViewModel
+@{
+    ViewData["Title"] = "RegisterStudent";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+<h1>RegisterStudent</h1>
 
 
 
@@ -130,18 +133,8 @@
         </button>
     </center>
     <div class="signup-form">
-        <form enctype="multipart/form-data" asp-controller="Student" asp-action="Create"
-              method="post">
+        <form method="post">
             <h2>Upload</h2>
-            <
-            <div class="form-group">
-                <div class="row">
-                    <div class="col">
-                        <input asp-for="sId" class="form-control" placeholder="Id">
-                        <span asp-validation-for="sId" class="text-danger"></span>
-                    </div>
-                </div>
-            </div>
             <div class="form-group">
                 <input asp-for="sName" class="form-control" placeholder="Student Name">
                 <span asp-validation-for="sName" class="text-danger"></span>
@@ -187,6 +180,14 @@
             <div class="form-group">
                 <input asp-for="sRollNumber" class="form-control" placeholder="Roll Number">
                 <span asp-validation-for="sRollNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input asp-for="Password" class="form-control" placeholder="Password">
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input asp-for="ConfirmPassword" class="form-control" placeholder="Confirm Password">
+                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label class="form-check-label"><input type="checkbox" required="required"> I accept the <a href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a></label>

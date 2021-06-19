@@ -1,14 +1,15 @@
-﻿@model ExaminationSystem.ViewModelStudent.CreateStudentViewModel
-@{ ViewData["Title"] = "NewStudent";
+﻿@model ExaminationSystem.ViewModel.StudentCourseViewModel
+@{
+    ViewData["Title"] = "StudCourse";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
+<h1>StudCourse</h1>
 
 <style>
     body {
         color: #fff;
-        background: #20334f;
+        /*background: #20334f;*/
         font-family: 'Roboto', sans-serif;
     }
 
@@ -119,40 +120,22 @@
     }
 </style>
 <body>
-    <center>
-
-        <h1>Add Student</h1>
-        <button type="button" class="btn btn-info">
-            <a asp-area="" asp-controller="Student" asp-action="AllDetails">Back to Student Details</a>
-        </button>
-        <button type="button" class="btn btn-info">
-            <a asp-area="" asp-controller="Home" asp-action="index">Back to Home</a>
-        </button>
-    </center>
     <div class="signup-form">
-        <form enctype="multipart/form-data" asp-controller="Student" asp-action="Create"
+        <form enctype="multipart/form-data" asp-controller="Home" asp-action="StudCourse"
               method="post">
             <h2>Upload</h2>
             <
             <div class="form-group">
                 <div class="row">
                     <div class="col">
-                        <input asp-for="sId" class="form-control" placeholder="Id">
-                        <span asp-validation-for="sId" class="text-danger"></span>
+                        <input asp-for="sName" class="form-control" placeholder="Name">
+                        <span asp-validation-for="sName" class="text-danger"></span>
                     </div>
                 </div>
             </div>
             <div class="form-group">
-                <input asp-for="sName" class="form-control" placeholder="Student Name">
-                <span asp-validation-for="sName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
                 <input asp-for="sEmailId" class="form-control" placeholder="Email Id">
                 <span asp-validation-for="sEmailId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input asp-for="sDOB" class="form-control" placeholder="DOB">
-                <span asp-validation-for="sDOB" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input asp-for="sFatherName" class="form-control" placeholder="Father Name">
@@ -163,36 +146,25 @@
                 <span asp-validation-for="sMotherName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <select asp-for="sBloodGroup" class="custom-select mr-sm-2 form-control"
-                        asp-items="Html.GetEnumSelectList<bGroup>()">
-                    <option value="">Please Select</option>
-                    <span asp-validation-for="sBloodGroup" class="text-danger"></span>
-                </select>
-            </div>
-            <div class="form-group">
-                <select asp-for="sGender" class="custom-select mr-sm-2 form-control"
-                        asp-items="Html.GetEnumSelectList<gen>()">
-                    <option value="">Please Select</option>
-                    <span asp-validation-for="sGender" class="text-danger"></span>
-                </select>
-            </div>
-            <div class="form-group">
                 <input asp-for="sMobileNumber" class="form-control" placeholder="Mobile Number">
-                <span asp-validation-for="sMobileNumber" class="text-danger"></span>
+                <span asp-validation-for="sMotherName" class="text-danger"></span>
+            </div><div class="form-group">
+                <input asp-for="cName" class="form-control" placeholder="Course Name">
+                <span asp-validation-for="cName" class="text-danger"></span>
+            </div><div class="form-group">
+                <input asp-for="cType" class="form-control" placeholder="Course Type">
+                <span asp-validation-for="cType" class="text-danger"></span>
+            </div><div class="form-group">
+                <input asp-for="cDuration" class="form-control" placeholder="Course Duration">
+                <span asp-validation-for="cDuration" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input asp-for="sAddress" class="form-control" placeholder="Address">
-                <span asp-validation-for="sAddress" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input asp-for="sRollNumber" class="form-control" placeholder="Roll Number">
-                <span asp-validation-for="sRollNumber" class="text-danger"></span>
-            </div>
+
+
             <div class="form-group">
                 <label class="form-check-label"><input type="checkbox" required="required"> I accept the <a href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a></label>
             </div>
             <div class="form-group">
-                <button type="submit" class="btn btn-success btn-lg btn-block">Add Student</button>
+                <button type="submit" class="btn btn-success btn-lg btn-block">Submit</button>
             </div>
 
         </form>

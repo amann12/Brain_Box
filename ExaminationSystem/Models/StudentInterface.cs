@@ -21,5 +21,10 @@ namespace ExaminationSystem.Models
 
         // Update Some Details to the Database (Edit Process).
         Student Update(Student studentChange);
+
+
+        Student GetDetailByEmail(string email);
+
+
     }
 }

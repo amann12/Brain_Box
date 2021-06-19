@@ -37,6 +37,11 @@ namespace ExaminationSystem.Models
             return context.Students.Find(Id);
         }
 
+        public Student GetDetailByEmail(string email)
+        {
+            return context.Students.SingleOrDefault(student => student.sEmailId == email);
+        }
+
         public IEnumerable<Student> StudentDetails()
         {
             return context.Students;

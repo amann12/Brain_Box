@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Brain-Box</title>
+    <title>@ViewData["Title"]Brain-Box</title>
 
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
@@ -42,6 +42,15 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="StudCourse">StudCourse</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="StudCourseView">StudCourseView</a>
+                        </li> 
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="Account" asp-action="RegisterStudent">RegisterStudent</a>
                         </li>
                         @if (SignInManager.IsSignedIn(User))
                         {
